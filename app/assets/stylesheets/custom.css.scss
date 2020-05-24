@@ -1,0 +1,65 @@
+@import 'bootstrap/dist/css/bootstrap';
+html,
+body {
+    height: 100%;
+    font-family: 'Pangolin';
+}
+
+.page-content {
+    flex: 1 0 auto;
+    background-color: #cbf3f0;
+}
+
+//barra de navegación principal
+.navbar {
+    background-color: #2d132c !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#button-search {
+    background-color: #ee4540;
+}
+
+//contenedor del jumbotron
+#home_container {
+    margin-top: 25px;
+}
+
+//imagen en app/assets/images
+.jumbotron {
+    background-image: asset-url('jumbotron_principal.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
+}
+
+#button-sign-up-main {
+    background-color: #ee4540;
+    color: white;
+}
+
+//footer
+#sticky-footer {
+    flex-shrink: none;
+    background-color: #2d132c;
+}
+
+
+/*-------------PAGINA DE ARTICULOS-----------------*/
+
+.text-article-link {
+    color: #ee4540;
+}

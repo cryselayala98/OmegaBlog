@@ -1,0 +1,54 @@
+<!--mt -> margin top-->
+<h1 class="text-center mt-4">Lista de artículos</h1>
+
+<div class="container">
+
+  <% @articles.each do |article| %>
+    
+    <!--justify-content-md-center -> para centrar todo el ontenido-->
+    <div class="row justify-content-md-center">
+      <div class="col-8 mt-4">
+
+        <!--div para agregar una sombra a la cajita-->
+        <div class="shadow mb-5 bg-white rounded">
+            
+            <div class="card text-center">
+              <div class="card-header font-italic">
+                Hecho por PonySalvale98
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= link_to article.title, article_path(article), class:"text-article-link" %>
+                </h5>
+                <p class="card-text">
+                  <!--mostrar solo los 100 primeros caracteres con el matodo truncate de rails-->
+                  <%= truncate(article.description, length: 100 )%>
+                </p>
+
+                <%= link_to 'Ver', article_path(article), class: "btn btn-outline-danger" %>
+
+                <%= link_to 'Editar', edit_article_path(article), class: "btn btn-outline-primary" %>
+
+                <%= link_to 'Eliminar', article_path(article), method: :delete, data: { confirm: "Estás seguro de eliminar el artículo?" }, class: "btn btn-outline-warning" %>
+
+              </div>
+              <div class="card-footer text-muted">
+                <small> 
+                  Creado <%= time_ago_in_words(article.created_at) %>, editado <%= time_ago_in_words(article.updated_at) %>
+                </small>
+              </div>
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <% end %>
+
+  <p class="text-center">
+  <%= link_to 'Crear nuevo artículo', new_article_path %>
+  </p>
+
+</div>

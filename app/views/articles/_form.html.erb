@@ -1,0 +1,47 @@
+
+<div class="container">
+
+  <!--Cargar mensajes flash errors-->
+  <%= render 'shared/errors' %>
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%= form_with(model: @article, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+    
+        <div class="form-group row">
+
+          <%= f.label :Titulo, class: "col-2 col-form-label text-light" %>
+
+          <div class="col-10">
+
+            <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Título del artículo" %>
+
+          </div>
+
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :Descripción, class: "col-2 col-form-label text-light" %>
+
+          <div class="col-10"> 
+            <%= f.text_area :description, rows: 10, class: "form-control shadow rounded", placeholder: "Descripción del artículo" %>
+          </div>
+          
+        </div>
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit :Crear, class: "btn btn-outline-light btn-lg" %>
+        </div>
+
+      <% end %>
+
+    </div>
+
+    <!--mb -> margin bottom-->
+    <div class="mb-3">
+      <%= link_to '[ Cancelar y Regresar a la lista de artículos ]', articles_path, class: "text-info" %>
+    </div>
+
+  </div>
+
+</div> 

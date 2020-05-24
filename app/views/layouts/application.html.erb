@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OmegaBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <!--Fuente de toda la página-->
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="d-flex flex-column">
+    
+      <!--Mostrar layout _navigation-->
+      <%= render 'layouts/navigation' %>
+
+      <!--Este div se hace con el objetivo de que el footer parmanezca en la parte de abajo siempre-->
+      <div class="page-content">
+       
+        <!--Mostrar mensaje flash en caso de que sea exitoso algo-->
+        <%= render 'layouts/messages' %>
+
+        <!--Cuerpo del front-->
+        <%= yield %>
+        
+      </div>
+
+      <%= render 'layouts/footer' %>
+    
+  </body>
+</html>
+
